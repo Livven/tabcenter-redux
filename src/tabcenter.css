@@ -213,6 +213,10 @@ img, .tab *:not(.clickable) {
     overflow-y: auto;
 }
 
+#tablist {
+    overflow-x: hidden;
+}
+
 .tab {
     display: flex;
     align-items: center;
