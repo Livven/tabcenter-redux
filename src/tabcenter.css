@@ -1,8 +1,9 @@
 @import url("contextmenu.css");
 
 :root {
-    --tab-active-background: 87%;
-    --tab-hover-background: 91%;
+    --tab-background-normal: 0, 0%, 99%;
+    --tab-background-active: 0, 0%, 87%;
+    --tab-background-hover: 0, 0%, 91%;
 }
 
 html, body {
@@ -10,7 +11,7 @@ html, body {
 }
 
 body {
-    background-color: hsl(0, 0%, 99%);
+    background-color: hsl(var(--tab-background-normal));
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #000;
     font-size: 11px;
@@ -232,11 +233,11 @@ img, .tab *:not(.clickable) {
 }
 
 .tab.active {
-    background-color: hsl(0, 0%, var(--tab-active-background));
+    background-color: hsl(var(--tab-background-active));
 }
 
 .tab:not(.active):hover {
-    background-color: hsl(0, 0%, var(--tab-hover-background));
+    background-color: hsl(var(--tab-background-hover));
 }
 
 .tab-context:not(.hasContext) {
@@ -372,17 +373,17 @@ img, .tab *:not(.clickable) {
     top: 0;
     bottom: 0;
     right: 0;
-    --tab-background: 99%;
-    background-image: linear-gradient(to right, hsla(0, 0%, var(--tab-background), 0), hsl(0, 0%, var(--tab-background)) 30%);
+    --tab-background: var(--tab-background-normal);
+    background-image: linear-gradient(to right, hsla(var(--tab-background), 0), hsl(var(--tab-background)) 30%);
     transform: translateX(36px);
 }
 
 .tab.active > .tab-title-wrapper::after {
-    --tab-background: var(--tab-active-background);
+    --tab-background: var(--tab-background-active);
 }
 
 .tab:not(.active):hover > .tab-title-wrapper::after {
-    --tab-background: var(--tab-hover-background);
+    --tab-background: var(--tab-background-hover);
 }
 
 .tab:not(.pinned):hover > .tab-title-wrapper::after {
