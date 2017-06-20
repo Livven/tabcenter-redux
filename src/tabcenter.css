@@ -467,7 +467,9 @@ img, .tab *:not(.clickable) {
 
 /* DARK THEME CUSTOMIZATIONS */
 body.dark-theme {
-    background-color: rgb(39, 43, 53);
+    --tab-background-normal: 223, 15.2%, 18%;
+    --tab-background-active: 221, 41.4%, 53.1%;
+    --tab-background-hover: 222, 28.3%, 35.55%;
     color: rgb(245, 247, 250);
 }
 
@@ -508,10 +510,6 @@ body.dark-theme .tab-host {
 
 body.dark-theme .tab.active .tab-host {
     color: #eaeaea;
-}
-
-body.dark-theme .tab.active {
-    background-color: rgb(86, 117, 185);
 }
 
 body.dark-theme .tab-icon-overlay {
